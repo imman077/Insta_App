@@ -1,0 +1,47 @@
+// Root-level build.gradle
+buildscript {
+    ext.kotlin_version = "1.8.10"  // Ensure compatibility with your Kotlin version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'  // Ensure compatibility with your compileSdk
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10"
+        classpath "com.google.gms:google-services:4.3.14"  // Updated version of Google services
+
+    }
+}
+
+plugins {
+    id("com.google.gms.google-services") version "4.3.14" apply false
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += "--release 8"
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.firebase:firebase-firestore-ktx:25.1.1'
+    }
+}

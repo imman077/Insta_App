@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "79085326941",
+    "firebase_url": "https://instagramapp-7b490-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "instagramapp-7b490",
+    "storage_bucket": "instagramapp-7b490.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79085326941:android:b3d95e46f056562250b3b4",
+        "android_client_info": {
+          "package_name": "com.example.insta_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABz_jgoLaR3PMgRWH1HL6-JPJfNDteev0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
